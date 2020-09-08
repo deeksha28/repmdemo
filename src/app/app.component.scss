@@ -141,6 +141,24 @@
     border: transparent !important;
 }
 
+.btnmenu:active, .btnmenu:focus {
+    border: transparent !important;
+    // background: transparent !important;
+    // border: transparent !important;
+}
+
 .dropdown-submenu:focus {
     border: transparent !important;
+}
+
+button:focus {outline:0 !important;}
+
+
+.dropdown-menu{
+    overflow-y: inherit !important;
+}
+
+.submenu{
+    right: 67px !important;
+    top: -22% !important;
 }

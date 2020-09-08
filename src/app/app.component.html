@@ -18,8 +18,8 @@
             </div>
             
 
-            <div class="collapse navbar-collapse displayOptions">
-                <ul class="navbar-nav w-50">
+            <div class="collapse navbar-collapse displayOptions row px-4">
+                <ul class="navbar-nav col">
                     <li>
                         <div class="main">
                             <div class="mb-0">
@@ -31,7 +31,7 @@
                     </li>
                 </ul>
     
-                <ul class="navbar-nav w-50">
+                <ul class="navbar-nav col">
                     <li style="width: inherit;">
                         <div class="main">
                             <div class="form-group has-search mb-0">
@@ -53,7 +53,7 @@
 
             <div class="">
                 <ul class="navbar-nav">                       
-                    <li ngbDropdown #myDrop="ngbDropdown">
+                    <!-- <li ngbDropdown #myDrop="ngbDropdown">
                         <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
                             <span class="cursor-pointer dropdown-toggle" id="single-button" ngbDropdownToggle (focus)="myDrop.toggle()" (isOpen)="openDropDown($event)" aria-haspopup="true"
                                 aria-expanded="true" tabindex="9">
@@ -67,7 +67,7 @@
                                         <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-submenu dropdown-toggle"
                                                 aria-controls="dropdown-basic">
                                                 {{currentLang | uppercase}} <span class="caret"></span>
-                                        </button>
+                                        </button>    
                                         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                                             role="menu" aria-labelledby="button-basic">
                                             <li class="dropdown-header pointer">Change language</li>
@@ -86,54 +86,32 @@
                                             <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
                                                     tabindex="9">System
                                                     <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
-                                        </ul>
+                                        </ul>                                    
                                       </div>  
-                                    <!-- <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
-                                        <a class="dropdown-item pointer dropdown-toggle" id="nested-button" ngbDropdownToggle (hover)="myDrop1.toggle()" aria-haspopup="true">
-                                            {{currentLang | uppercase}} <span class="caret"></span>
-                                        </a>
-                                        <ul ngbDropdownMenu aria-labelledby="nested-button" class="dropdown-menu dropdown-menu-right" role="menu">
-                                            <li class="dropdown-header pointer">Change language</li>
-                                        <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
-                                                tabindex="9">Deutsch
-                                                <i [ngClass]="{ 'fa fa-check' : isCultureSelected('de') }"></i></a></li>
-                                        <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('fr')"
-                                                tabindex="9">Français
-                                                <i [ngClass]="{ 'fa fa-check' : isCultureSelected('fr') }"></i></a></li>
-                                        <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('it')"
-                                                tabindex="9">Italian
-                                                <i [ngClass]="{ 'fa fa-check' : isCultureSelected('it') }"></i></a></li>
-                                        <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('en')"
-                                                tabindex="9">English
-                                                <i [ngClass]="{ 'fa fa-check' : isCultureSelected('en') }"></i></a></li>
-                                        <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
-                                                tabindex="9">System
-                                                <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
-                                        </ul>
-                                    </div> -->
                                 </li>
                                 <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
                             </ul>
+                            
                         </div>
-                    </li>
+                    </li> -->
 
-                    <!-- <li>
-                        <div class="btn-group" dropdown placement="bottom left" [autoClose]="false" container="body">
+                    <li>
+                        <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" container="body">
                             <button id="button-nested" dropdownToggle type="button" class="btn btn-primary btnmenu dropdown-toggle"
                                     aria-controls="dropdown-nested">
                                     <i class="fa fa-cog iconSize18"></i>  <span class="caret"></span>
                             </button>
-                            <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu"
+                            <ul id="dropdown-nested" *dropdownMenu class="dropdown-menu dropdown-menu-right"
                                 role="menu" aria-labelledby="button-nested">
                                 <li class="dropdown-header username">username@example.com </li>
                                 <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
-                                <li role="menuitem" dropdown triggers="mouseover" placement="left" container="body">  
+                                <li role="menuitem" dropdown triggers="mouseover" placement="top right">  
                                     <div class="btn-group" dropdown>
                                         <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-submenu dropdown-toggle"
                                                 aria-controls="dropdown-basic">
                                                 {{currentLang | uppercase}} <span class="caret"></span>
                                         </button>
-                                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right submenu"
                                             role="menu" aria-labelledby="button-basic">
                                             <li class="dropdown-header pointer">Change language</li>
                                             <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
@@ -157,7 +135,7 @@
                                 <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
                             </ul>
                           </div>
-                    </li> -->
+                    </li>
                     <!-- <li class="dropdown" ngbDropdown>
                         <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
                             <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
