@@ -34,4 +34,8 @@ export class AppComponent {
   public isCultureSelected(culture) {
     return culture === this.currentLang;
   }
+
+  public openDropDown(event) {
+    console.log("**** open drop down **** ", event)
+  }
 }

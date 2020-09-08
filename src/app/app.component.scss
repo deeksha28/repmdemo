@@ -128,3 +128,19 @@
 .iconSearch {
     color: white;
 }
+
+.dropdown-submenu {
+    background: transparent !important;
+    border: transparent !important;
+    color: #005684 !important;
+    padding: 0 1.5rem !important;
+}
+
+.btnmenu {
+    background: transparent !important;
+    border: transparent !important;
+}
+
+.dropdown-submenu:focus {
+    border: transparent !important;
+}

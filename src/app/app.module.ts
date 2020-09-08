@@ -27,6 +27,8 @@ import {PaginatorModule} from 'primeng/paginator';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     NgbDropdownModule,
     FormsModule,
     BrowserAnimationsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
