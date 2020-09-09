@@ -16,9 +16,12 @@ export class AppComponent {
   public svgHeight = 25;
   public svgFillColor = '#ffffff';
   currentLang = 'en';
-
+  portal;
   constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
     // this.selectedView = "overview"
+    this.ds.portal.subscribe((value) => {
+      this.portal = value
+    })
   }
 
   onLangChange(lang){

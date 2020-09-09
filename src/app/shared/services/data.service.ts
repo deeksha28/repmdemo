@@ -13,6 +13,8 @@ export class DataService {
   headerType = this.headerTypeSubject.asObservable();
   portfolioToggleSubject = new BehaviorSubject<boolean>(false);
   portfolioToggle = this.portfolioToggleSubject.asObservable();
+  portalSubject = new BehaviorSubject<boolean>(true);
+  portal = this.portalSubject.asObservable();
   public portfolioId = 0;
   public propertyId = 0;
   constructor() { }
