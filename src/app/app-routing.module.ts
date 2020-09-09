@@ -13,7 +13,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: "overview",
+        path: "",
         loadChildren: () =>
           import("./modules/overview/overview.module").then(
             (m) => m.OverviewModule
