@@ -20,11 +20,10 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
     // this.selectedView = "overview"
     this.ds.portal.subscribe((value) => {
-      this.portal = value
+      this.portal = value;
     })
   }
   ngOnInit(): void {
-     this.navigate("overview", "", "/overview");
   }
 
   onLangChange(lang){
@@ -32,6 +31,8 @@ export class AppComponent implements OnInit {
   }
   public navigate(selectedView: string, level: string, path: string) {   
     // this.selectedView = selectedView;
+    if(selectedView == 'overview' || selectedView == 'tasks')
+      this.tabService.setActiveUrl(path);
     this.tabService.addTab(path);
     this.router.navigate([path]);
   }

@@ -79,6 +79,19 @@ export class TabService {
   getTab(){
     return this.tabs;
   }
+
+  setActiveUrl(path){
+    this.activeUrl = path;
+  }
+
+  refreshURL(path){
+    let tab = this.tabOptions.find(tab => path.includes(tab.path))
+    if(path == tab.path){
+      this.addTab(path)
+    }else{
+      this.addTab(tab.path, path.split(tab.path)[1])
+    }
+  }
 }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
 import { TabService } from '../../tab.service';
-import { Router, NavigationEnd   } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute   } from '@angular/router';
 import { environment } from "../../../environments/environment";
 
 @Component({
@@ -17,7 +17,11 @@ export class LayoutComponent implements OnInit {
   tabs = [];
  
 
-  constructor(private ds: DataService,public tabService: TabService, private router : Router) { }
+  constructor(private ds: DataService,public tabService: TabService, private router : Router, private activatedRoute : ActivatedRoute) { 
+    this.ds.portalSubject.next(false)   
+    let url = this.activatedRoute.snapshot['_routerState'].url;
+    this.tabService.refreshURL(url); 
+  }
 
   ngOnInit(): void {
     this.ds.portfolioToggle.subscribe((value) => {
@@ -37,7 +41,8 @@ export class LayoutComponent implements OnInit {
     
     this.tabService.deleteTab(index);
     if(this.tabService.getTab().length == 0){
-      this.router.navigateByUrl('/')
+      this.tabService.addTab('/overview')
+      this.router.navigate(['/overview']);
     }
     event.preventDefault();
     console.log(this.tabService.activeUrl);

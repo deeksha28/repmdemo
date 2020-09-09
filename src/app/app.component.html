@@ -9,10 +9,10 @@
                 <a class="navbar-brand mr-1" id="LogoHome" href="{{redirectURL}}">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
-                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
+                <a class="navbar-brand mr-1 pointer" id="LogoHome" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
                     <img class="p-2" id="topbar-logo" src="./assets/img/Overview.svg">
                 </a>
-                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
+                <a class="navbar-brand mr-1 pointer" id="LogoHome" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
                     <img class="p-2" id="topbar-logo" src="./assets/img/task list_1.svg">
                 </a>
                 <span class="portal-header" *ngIf="portal"> Portal </span>
