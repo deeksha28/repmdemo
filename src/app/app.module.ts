@@ -28,6 +28,7 @@ import {PaginatorModule} from 'primeng/paginator';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { PortalComponent } from './components/portal/portal.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     LayoutComponent,
     NavigationComponent,
     PrevNextComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,

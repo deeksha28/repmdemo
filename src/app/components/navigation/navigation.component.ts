@@ -66,7 +66,6 @@ export class NavigationComponent implements OnInit {
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
-    this.view = "portfolio"
   }
 
   ngOnInit(): void {

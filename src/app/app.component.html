@@ -9,18 +9,19 @@
                 <a class="navbar-brand mr-1" id="LogoHome" href="{{redirectURL}}">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
-                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('overview', '', '/overview')">
+                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
                     <img class="p-2" id="topbar-logo" src="./assets/img/Overview.svg">
                 </a>
-                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('tasks', '', '/tasks')">
+                <a class="navbar-brand mr-1" id="LogoHome" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
                     <img class="p-2" id="topbar-logo" src="./assets/img/task list_1.svg">
                 </a>
+                <span class="portal-header" *ngIf="portal"> Portal </span>
             </div>
             
 
             <div class="collapse navbar-collapse displayOptions row px-4">
                 <ul class="navbar-nav col">
-                    <li>
+                    <li *ngIf="!portal">
                         <div class="main">
                             <div class="mb-0">
                                 <div class="nav navbar-nav topbar-label">
@@ -32,7 +33,7 @@
                 </ul>
     
                 <ul class="navbar-nav col">
-                    <li style="width: inherit;">
+                    <li style="width: inherit;" *ngIf="!portal">
                         <div class="main">
                             <div class="form-group has-search mb-0">
                                 <span class="fa fa-search form-control-feedback"></span>
@@ -41,60 +42,10 @@
                         </div>
                     </li>
                 </ul>
-                                
-               <!-- <ul class="collapse navbar-nav" id="searchForm">
-                    <div class="form-group has-search mb-0">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </ul> -->
-                
             </div>
 
-            <div class="">
+            <div class="" *ngIf="!portal">
                 <ul class="navbar-nav">                       
-                    <!-- <li ngbDropdown #myDrop="ngbDropdown">
-                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
-                            <span class="cursor-pointer dropdown-toggle" id="single-button" ngbDropdownToggle (focus)="myDrop.toggle()" (isOpen)="openDropDown($event)" aria-haspopup="true"
-                                aria-expanded="true" tabindex="9">
-                                <i class="fa fa-cog iconSize18"></i> <span class="caret"></span>
-                            </span>
-                            <ul ngbDropdownMenu aria-labelledby="single-button" class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li class="dropdown-header username">username@example.com </li>
-                                <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
-                                <li role="menuitem" dropdown triggers="mouseover" placement="right" container="body">  
-                                    <div class="btn-group" dropdown>
-                                        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-submenu dropdown-toggle"
-                                                aria-controls="dropdown-basic">
-                                                {{currentLang | uppercase}} <span class="caret"></span>
-                                        </button>    
-                                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                                            role="menu" aria-labelledby="button-basic">
-                                            <li class="dropdown-header pointer">Change language</li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
-                                                    tabindex="9">Deutsch
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('de') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('fr')"
-                                                    tabindex="9">Français
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('fr') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('it')"
-                                                    tabindex="9">Italian
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('it') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('en')"
-                                                    tabindex="9">English
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('en') }"></i></a></li>
-                                            <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
-                                                    tabindex="9">System
-                                                    <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
-                                        </ul>                                    
-                                      </div>  
-                                </li>
-                                <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
-                            </ul>
-                            
-                        </div>
-                    </li> -->
-
                     <li>
                         <div class="btn-group" dropdown placement="bottom right" [insideClick]="true" container="body">
                             <button id="button-nested" dropdownToggle type="button" class="btn btn-primary btnmenu dropdown-toggle"
@@ -136,47 +87,6 @@
                             </ul>
                           </div>
                     </li>
-                    <!-- <li class="dropdown" ngbDropdown>
-                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
-                            <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
-                                aria-expanded="true">
-                                <span id="userNameTopBar" class="userNamePadding"> username@example.com </span>
-                                <span class="caret"></span>
-                            </span>
-                            <ul ngbDropdownMenu aria-labelledby="single-button"
-                                class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li role="menuitem"><a class="dropdown-item pointer">Manage account</a></li>
-                                <li role="menuitem"><a class="dropdown-item pointer">Sign out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li ngbDropdown>
-                        <div class="nav navbar-nav dropdown open active drop-header" dropdown="">
-                            <span class="cursor-pointer dropdown-toggle" ngbDropdownToggle aria-haspopup="true"
-                                aria-expanded="true" tabindex="9">
-                                {{currentLang | uppercase}} <span class="caret"></span>
-                            </span>
-                            <ul ngbDropdownMenu aria-labelledby="single-button"
-                                class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li class="dropdown-header pointer">Change language</li>
-                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('de')"
-                                        tabindex="9">Deutsch
-                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('de') }"></i></a></li>
-                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('fr')"
-                                        tabindex="9">Français
-                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('fr') }"></i></a></li>
-                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('it')"
-                                        tabindex="9">Italian
-                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('it') }"></i></a></li>
-                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('en')"
-                                        tabindex="9">English
-                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('en') }"></i></a></li>
-                                <li role="menuitem"><a class="dropdown-item pointer" (click)="onLangChange('sy')"
-                                        tabindex="9">System
-                                        <i [ngClass]="{ 'fa fa-check' : isCultureSelected('sy') }"></i></a></li>
-                            </ul>
-                        </div>
-                    </li> -->
                 </ul>
             </div>
         </nav>
