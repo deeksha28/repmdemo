@@ -33,11 +33,14 @@
   font-weight: 700;
 }
 .flexItemNavigation {
-    width: 116.77px;
-    min-width: 116.77px
+  width: 116.77px;
+  min-width: 116.77px;
 }
 .flexItemNavigationContent {
   width: 100%;
+  overflow: auto;
+  height: 890px;
+  min-height: 890px;
 }
 
 /* @media (max-width: 560px) {
@@ -66,3 +69,24 @@
     min-width: 11.6%;
   }
 } */
+
+// scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
