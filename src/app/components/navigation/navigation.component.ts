@@ -77,17 +77,25 @@ export class NavigationComponent implements OnInit {
       this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
       path = path + this.portfolioId;
-    } else if (level === 'property') {
+      this.ds.headerTypeSubject.next('portfolio')
+      this.ds.viewSubject.next('portfolio')
+      this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()]);
+    }
+
+    else if (level === 'property') {
       this.propertyId = this.ds.getPropertyId();
+      this.ds.viewSubject.next(level)
       this.tabService.addTab(path,this.propertyId);
       path = path + this.propertyId;
+      this.ds.headerTypeSubject.next('property')
+      this.ds.viewSubject.next('property')
+      var property = this.ds.bgvPortfolio.find(prop=>prop.id === this.propertyId.toString()).name;
+      if(property==undefined)property = this.ds.offeredPortfolio.find(prop=>prop.id === this.propertyId.toString()).name
+      if(property!=undefined) 
+      this.ds.headerSubject.next(this.propertyId + property)
     }
     this.selectedView = selectedView;
     this.router.navigate([path]);
-  }
-
-  public selectView(selectedView) {
-    
   }
 
   openTab(url: string) {

@@ -7,9 +7,10 @@
                 </span>
             </div>
             <div class="col-md-10 col-sm-10" style="padding-left: 0;margin-top: 1px">
-                <select *ngIf="showLabels" style="padding-left: 0" (change)="selectPortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
-                    <option [selected]="0 === selectedPortfolioId" value="0"> BGV Portfolio</option>
-                    <option  [selected]="1 === selectedPortfolioId" value="1"> Offered Portfolio</option><!----></select>
+                <select *ngIf="showLabels" style="padding-left: 0" (change)="choosePortfolio($event)" class="form-control ng-pristine ng-valid ng-touched">
+                    <option [selected]="0 == selectedPortfolioId" value="0"> BGV Portfolio</option>
+                    <option  [selected]="1 == selectedPortfolioId" value="1"> Offered Portfolio</option>
+                </select>
             </div> 
         </div>
         <hr class="seperator"/>
@@ -90,7 +91,7 @@
         <p-table [value]="filteredProperties" [paginator]="true" [rows]="10" [showCurrentPageReport]="false" 
         [rowsPerPageOptions]="[10,20,30]">
             <ng-template pTemplate="caption">
-                <div>
+                <div id="selectedPortfolioLabel" (click)="selectPortfolio()" [ngClass]="{ 'selectedRow': level == 4 }">
                     <span>{{selectedPortfolio}}</span>
                 </div>
             </ng-template>
@@ -100,7 +101,7 @@
                 </tr>
             </ng-template> -->
             <ng-template pTemplate="body" let-property>
-                <tr (click)="selectProp(property.id, property.name)" [ngClass]="{ 'selectedRow': selectedRowId == property.id }">
+                <tr (click)="selectProp(property.id, property.name)" [ngClass]="{ 'selectedRow': selectedRowId == property.id && level == 3 }">
                     <td>{{property.id}}{{property.name}}</td>
                 </tr>
             </ng-template>

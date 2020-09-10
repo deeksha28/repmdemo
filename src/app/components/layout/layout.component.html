@@ -16,7 +16,7 @@
             <ngb-tab *ngFor="let tab of tabs ; let index = index" [id]="tab.tabId">
             <ng-template ngbTabTitle>
                 <span style="text-transform: capitalize;">{{tab.name}}</span>
-                <span *ngIf="tab.name!='overview'" (click)="closeTab(index, $event,tab.tabId)" class="closeTab">&times;</span>
+                <span *ngIf="tab.name!='overview'" (click)="closeTab(index, $event)" class="closeTab">&times;</span>
                 </ng-template>
             <ng-template ngbTabContent><router-outlet></router-outlet></ng-template>
             </ngb-tab>

@@ -48,7 +48,7 @@
 
     <tr>  
       <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'property', '/profitAndLoss/portfolio/')">
+        (click)="navigate('profit-and-loss', 'portfolio', '/profitAndLoss/portfolio/')">
         <div [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }" class="svg-container">
           <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
           <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>

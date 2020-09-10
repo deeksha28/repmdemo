@@ -27,7 +27,8 @@ export class LayoutComponent implements OnInit {
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
-    this.tabs = this.tabService.tabs;
+    this.tabs = this.tabService.tabs;   
+    this.setHeaderPropertyLabel(this.router.url);
   }
 
   toggleViewLabels() {
@@ -37,18 +38,59 @@ export class LayoutComponent implements OnInit {
   toggleViewPortfolio() {
     this.showPortfolio = !this.showPortfolio;
   }
-  closeTab(index: number, event: Event,url) {
-    
+  closeTab(index: number, event: Event) {
+    var activeTabId = document.getElementsByClassName('nav-link active')[0].getAttribute('id');
+    var deleteTabId = this.tabs[index].tabId;
     this.tabService.deleteTab(index);
+
     if(this.tabService.getTab().length == 0){
       this.tabService.addTab('/overview')
       this.router.navigate(['/overview']);
     }
+    
+    else if(activeTabId == deleteTabId){
+      this.router.navigateByUrl(this.tabs[0].url)
+      this.setHeaderPropertyLabel(this.tabs[0].url)
+    }
+    
     event.preventDefault();
     console.log(this.tabService.activeUrl);
   }
   onTabChange(event) {
-    this.router.navigateByUrl(this.tabs.find(tab=>tab.tabId == event.nextId).url);
+    var url = this.tabs.find(tab=>tab.tabId == event.nextId).url;  
+    this.setHeaderPropertyLabel(url)
+    this.router.navigateByUrl(url);
+    this.router.navigateByUrl(url);
+  }
+
+  private setHeaderPropertyLabel(url){
+    // var url = this.tabs.find(tab=>tab.tabId == event.nextId).url;
+     if(url.split('/')[2]!=undefined){
+       var propertyId = url.split('/')[3];
+       if(url.split('/')[2]=='property'){
+         var property;
+         this.ds.headerTypeSubject.next('property')
+         this.ds.viewSubject.next('property')
+         property = this.ds.bgvPortfolio.find(prop=>prop.id == propertyId);
+         this.ds.setPortfolioId(0);
+         if(property==undefined){
+           this.ds.setPortfolioId(1);
+           property = this.ds.offeredPortfolio.find(prop=>prop.id == propertyId)
+         }
+         if(property!=undefined) this.ds.headerSubject.next(property.id + property.name);
+       }
+       else{
+         this.ds.setPortfolioId(propertyId);
+         this.ds.headerTypeSubject.next('portfolio')
+         this.ds.viewSubject.next('portfolio')
+         this.ds.headerSubject.next(this.ds.portfolios[propertyId])
+       }
+     }
+     else{
+       this.ds.headerTypeSubject.next('portfolio')
+       this.ds.viewSubject.next('portfolio')
+       this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()])
+     }   
   }
 
   
