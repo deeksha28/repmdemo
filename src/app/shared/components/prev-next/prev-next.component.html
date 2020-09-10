@@ -4,15 +4,15 @@
 
 	<app-svg-icons *ngIf="showPrevNext()" id="next" [key]="nextKey" [height]="svgHeight" [fillColor]="svgFillColor"
 		class="pointer" (click)="navigate('next')"></app-svg-icons> -->
-	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/home_arrow_left.svg">
-	<span class="cursor-pointer" (click)="navigate('portfolio', '', '')"> {{ header }} </span>
-	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/home_arrow_right.svg">
-	<ngContainer *ngIf="!header">
+	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/back.svg">
+	<span class="cursor-pointer" (click)="navigate('portfolio', '', '')"> {{ header }}&nbsp;<i *ngIf="headerType!='property'"  class="fa fa-caret-down"></i> </span>
+	<img class="prev-next pointer"  *ngIf="showPrevNext()" src="./assets/img/next.svg">
+	<!-- <ngContainer *ngIf="!header">
 		<div id="intialPropBox" (click)="navigate('portfolio', '', '')">
 			<div [ngClass]="{ 'portfolio-selected': viewPortfolio }" class="svg-container">
-				<!-- <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i> -->
+			
 				<span class="align-span cursor-pointer">&nbsp;&nbsp;BGV Portfolio</span>
 			</div>
 		</div>
-	</ngContainer>
+	</ngContainer> -->
 </div>

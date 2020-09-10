@@ -14,11 +14,16 @@ export class PrevNextComponent implements OnInit {
   public svgHeight = 14;
   public svgFillColor = '#fff'; // '#005684';
   public header: string;
+  public headerType: string;
+
   selectedView;
   constructor(private router: Router,private ds: DataService) {
     this.ds.header.subscribe((value) => {
       this.header = value
     })
+        this.ds.headerType.subscribe((value) => {
+          this.headerType = value;
+        });
   }
 
   ngOnInit(): void {
