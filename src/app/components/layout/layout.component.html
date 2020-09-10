@@ -1,5 +1,5 @@
 <div class="layoutContainer d-flex flex-row">
-    <div class="flexItemNavigation" *ngIf="showLabels">
+    <div class="flexItemNavigation" [ngClass]="{'d-block': showLabels,'d-none': !showLabels}">
         <div class="flexItemNavigationContent">
             <app-navigation [showLabels]="showLabels"></app-navigation>
         </div>      
@@ -16,7 +16,7 @@
             <ngb-tab *ngFor="let tab of tabs ; let index = index" [id]="tab.tabId">
             <ng-template ngbTabTitle>
                 <span style="text-transform: capitalize;" class="tabName">{{tab.name}}</span>
-                <span *ngIf="tab.name!='overview'" (click)="closeTab(index, $event)" class="closeTab">&times;</span>
+                <span *ngIf="tab.name!='overview'" (click)="closeTab(index, $event)" class="closeTab mx-2">&times;</span>
                 </ng-template>
             <ng-template ngbTabContent><router-outlet></router-outlet></ng-template>
             </ngb-tab>

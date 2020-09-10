@@ -1,316 +1,256 @@
-<div >
-<p class="groupHeader groupToggle" *ngIf="true"  id="portfolio"><a data-toggle="collapse"  href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapseExample">Portfolio</a><span class="caret"></span></p>
-<div  class="collapse" *ngIf="showLabels" id="collapsePortfolio">
-
- <!--  <table >
-  <tr>
-    <td title="Overview" (click)="navigate('overview', '', 'overview')">
-      <div [ngClass]="{ 'selected-view': selectedView === 'overview'}" class="svg-container">
-        <app-svg-icons [key]="overviewKey" [height]="svgHeight" [fillColor]="svgFillColorArr[0]"> </app-svg-icons>
-        <span >&nbsp;&nbsp;Overview</span>
-      </div>
-    </td>
-  </tr>
-
-    <tr>
-      <td title="Portfolio" (click)="navigate('portfolio', '', '')">
-        <div [ngClass]="{ 'portfolio-selected': viewPortfolio }" class="svg-container">
-          <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
-          <span class="align-span" >&nbsp;&nbsp;Portfolio</span>
-        </div>
-      </td>
-    </tr>
-
-  <tr>
-    <td title="Tasks" (click)="navigate('tasks', '', 'tasks')">
-      <div [ngClass]="{ 'selected-view': selectedView === 'tasks' }" class="svg-container">
-        <i class="fa fa-tasks iconSize23" aria-hidden="true"></i>
-        <span class="align-span" >&nbsp;&nbsp;Tasks</span>
-      </div>
-    </td>
-  </tr>
-  </table> -->
-  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseEdit" role="button" aria-expanded="false" aria-controls="collapseExample">Edit</a></p>
-  <hr class="seperator" *ngIf="true"/>
-
-  <div class="collapse" id="collapseEdit">
-  <table>
-    <tr>  
-      <td title="Construction Planning"
-        (click)="navigate('constructionplanning', 'portfolio', '/constructionplanning/portfolio/')">
-        <div class="svg-container"
-          [ngClass]="{ 'selected-view': selectedView === 'constructionplanning' }">
-          <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;Construction Planning</span>
-        </div>
-      </td>
-    </tr>
-
-    <tr>  
-      <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'portfolio', '/profitAndLoss/portfolio/')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }" class="svg-container">
-          <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-  </div>
-
-  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseCalc" role="button" aria-expanded="false" aria-controls="collapseExample">Calculations</a></p>
-  <hr class="seperator" *ngIf="true"/>
-
-  <div class="collapse" id="collapseCalc">
-  <table>
-    <tr >  
-      <td title="DCF" (click)="navigate('dcf', 'portfolio', '/dcf/portfolio/')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'dcf' }" class="svg-container">
-          <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
-        </div>
-      </td>
-    </tr>
-
-    <tr >
-      <td title="QC Capex"
-        (click)="navigate('qualicasa', 'portfolio', '/qualicasa/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
-          <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
-        </div>
-      </td>
-    </tr>
-
-    <tr > 
-      <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', '/hedonic/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
-          <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-  </div>
-
-  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseAnalysis" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
-  <hr class="seperator" />
-  <div class="collapse" id="collapseAnalysis">
-  <table>
-    <tr >
-      <td title="Cockpit" (click)="navigate('cockpit', 'portfolio', '/cockpit/portfolio')">
-        <div class="svg-container">
-          <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;Cockpit</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-  </div>
-
-  <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseSettings" role="button" aria-expanded="false" aria-controls="collapseExample">Settings</a></p>
-  <hr class="seperator" />
-  
-  <div class="collapse" id="collapseSettings">
-  <table>
-    <tr > 
-      <td title="Import Data"
-        (click)="navigate('importdata', 'portfolio', '/importdata/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'importdata' }">
-         <i class="fa fa-upload iconSize23" aria-hidden="true"></i>
-          <span  >&nbsp;&nbsp;Import Data</span>
-        </div>
-      </td>
-    </tr>
-    <tr > 
-      <td title="Language" (click)="navigate('language', 'portfolio', '/language/portfolio/')">
-        <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' }">
-          <span><i class="fa fa-language" aria-hidden="true"></i></span>
-          <span class="align-span" >&nbsp;&nbsp;Language</span>
-        </div>
-      </td>
-    </tr>
-
-    <tr >
-      <td title="Duplicate property"
-        (click)="navigate('cloneproperty', 'portfolio', '/duplicateproperty/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'cloneproperty' }">
-          <app-svg-icons [key]="clonePropertyKey" [height]="svgHeight" [fillColor]="svgFillColorArr[11]"> </app-svg-icons>
-          <span >&nbsp;&nbsp;Duplicate property</span>
-        </div>
-      </td>
-    </tr>
-
-    <tr > 
-      <td title="Settings"
-        (click)="navigate('settings', 'portfolio', '/settings/portfolio/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'settings' }">
-          <i class="fa fa-cog iconSize23" aria-hidden="true"></i>
-          <span class="align-span" >&nbsp;&nbsp;Settings</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-  </div>
-</div><!--collapsePortfolio-->
-
-  <p class="groupHeader groupToggle" id="property" *ngIf="view == 'property'"><a data-toggle="collapse"  href="#collapseProperty" role="button" aria-expanded="false" aria-controls="collapseExample">Property</a><span  class="caret"></span></p>
-<div  class="collapse" *ngIf="showLabels" id="collapseProperty">
-<!--   <table>
-  <tr>
-      <td title="Overview" (click)="navigate('overview', '', 'overview')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'overview'}" class="svg-container">
-          <app-svg-icons [key]="overviewKey" [height]="svgHeight" [fillColor]="svgFillColorArr[0]"> </app-svg-icons>
-          <span  >&nbsp;&nbsp;Overview</span>
-        </div>
-      </td>
-    </tr>
-  
-      <tr>
-        <td title="Portfolio" (click)="navigate('portfolio', '', '')">
-          <div [ngClass]="{ 'portfolio-selected': viewPortfolio }" class="svg-container">
-            <i class="fa fa-sitemap  iconSize23" aria-hidden="true"></i>
-            <span class="align-span" >&nbsp;&nbsp;Portfolio</span>
-          </div>
-        </td>
-      </tr>
-  
-    <tr>
-      <td title="Tasks" (click)="navigate('tasks', '', 'tasks')">
-        <div [ngClass]="{ 'selected-view': selectedView === 'tasks' }" class="svg-container">
-          <i class="fa fa-tasks iconSize23" aria-hidden="true"></i>
-          <span class="align-span" >&nbsp;&nbsp;Tasks</span>
-        </div>
-      </td>
-    </tr>
-  </table> -->
-    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseEditProp" role="button" aria-expanded="false" aria-controls="collapseExample">Edit</a></p>
-  <hr class="seperator" *ngIf="true"/>
-
-  <div class="collapse" id="collapseEditProp">
-  <table>
-    <tr>
-      <td title="Characteristics"
-        (click)="navigate('masterdata', 'property', '/characteristics/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'masterdata' }">
-          <app-svg-icons [key]="masterdataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[3]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[3]}">&nbsp;&nbsp;Characteristics</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr >
-      <td title="Rent roll"
-        (click)="navigate('renter-mirror', 'property', '/rent/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'renter-mirror' }">
-          <app-svg-icons [key]="rentermirrorKey" [height]="svgHeight" [fillColor]="svgFillColorArr[2]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[2]}">&nbsp;&nbsp;Rent roll</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr>
-      <td title="Profit & loss"
-        (click)="navigate('profit-and-loss', 'property', '/profitAndLoss/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'profit-and-loss' }">
-          <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr>
-      <td title="Budget" (click)="navigate('budget', 'property', '/budget/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'budget' }">
-          <app-svg-icons [key]="budgetKey" [height]="svgHeight" [fillColor]="svgFillColorArr[15]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[15]}">&nbsp;&nbsp;Budget</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-  </div>
-
-    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseCalcProp" role="button" aria-expanded="false" aria-controls="collapseExample">Calculations</a></p>
-    <hr class="seperator"/>
-    <div class="collapse" id="collapseCalcProp">
-    <table>
-      <tr >
-      <td title="QC Capex" (click)="navigate('qualicasa', 'property', '/qualicasa/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' }">
-          <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr >
-      <td title="DCF" (click)="navigate('dcf', 'property', '/dcf/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'dcf' }">
-          <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr >
-      <td title="Hedonic" (click)="navigate('hedonic', 'property', '/hedonic/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' }">
-          <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr >
-      <td title="Process stepper"
-        (click)="navigate('process-stepper', 'property', '/process/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'process-stepper' }">
-          <app-svg-icons [key]="processstepperKey" [height]="svgHeight" [fillColor]="svgFillColorArr[10]">
-          </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[10]}">&nbsp;&nbsp;Process stepper</span>
-        </div>
-      </td>
-    </tr>
-  
-    <tr >
-      <td title="Rating" (click)="navigate('rating', 'property', '/rating/property/')">
-        <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' }">
-          <app-svg-icons [key]="ratingKey" [height]="svgHeight" [fillColor]="svgFillColorArr[18]"> </app-svg-icons>
-          <span  [ngStyle]="{'color': svgFillColorArr[18]}">&nbsp;&nbsp;Rating</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-    </div>
-
-    <p class="groupHeader groupToggle" *ngIf="true"><a data-toggle="collapse" href="#collapseAnalysisProp" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
-    <hr class="seperator"/>
-    <div class="collapse" id="collapseAnalysisProp">
-    <table>
-      <tr >
-        <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', '/immocockpit/property/')">
-          <div class="svg-container">
-            <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
-            <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;ImmoCockpit</span>
-          </div>
-        </td>
-      </tr>
+<div id="navigationBar">
+  <p class="groupHeader groupToggle" id="portfolio"><a data-toggle="collapse"  href="#collapsePortfolio" role="button" aria-expanded="false" aria-controls="collapseExample">Portfolio</a><span class="caret"></span></p>
+  <div  class="collapse" id="collapsePortfolio">
     
-      <tr >
-        <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', '/mapspro/property/')">
-          <div class="svg-container">
-            <app-svg-icons [key]="mapKey" [height]="svgHeight" [fillColor]="svgFillColorArr[8]"></app-svg-icons>
-            <span  [ngStyle]="{'color': svgFillColorArr[8]}">&nbsp;&nbsp;IAZI MapsPro</span>
+    <p class="groupHeader groupToggle" ><a data-toggle="collapse" href="#collapseEdit" role="button" aria-expanded="false" aria-controls="collapseExample">Edit</a></p>
+    <hr class="seperator" />
+    <div class="collapse" id="collapseEdit">
+    <table>
+      <tr>  
+        <td title="Construction Planning"
+          (click)="navigate('constructionplanning', 'portfolio', '/constructionplanning/portfolio/')">
+          <div class="svg-container"
+            [ngClass]="{ 'selected-view': selectedView === 'constructionplanning' && selectedViewLevel === 'portfolio'}">
+            <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;Construction Planning</span>
+          </div>
+        </td>
+      </tr>
+  
+      <tr>  
+        <td title="Profit & loss"
+          (click)="navigate('profitandloss', 'portfolio', '/profitAndLoss/portfolio/')">
+          <div [ngClass]="{ 'selected-view': selectedView === 'profitandloss' && selectedViewLevel === 'portfolio' }" class="svg-container">
+            <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
           </div>
         </td>
       </tr>
     </table>
     </div>
-</div> <!--collapseProperty-->
-</div>
   
-  <!-- <repm5-modal [type]="'confirmation'" [modalSizeClass]="'modal-md'" [id]="'saveConfirmationModal'" [header]="'Warning'"
-    [showHeaderCancel]="true" [showModal]="toggleConfirmModal" [confirmationMessage]="'saveConfirmation'"
-    [confirmButtons]="confirmModalYesNo" (toggleModalVisibility)="showHideModal($event)"
-    (buttonClick)="onConfirmModalClick($event)">
-  </repm5-modal> -->
+    <p class="groupHeader groupToggle" ><a data-toggle="collapse" href="#collapseCalc" role="button" aria-expanded="false" aria-controls="collapseExample">Calculations</a></p>
+    <hr class="seperator" />
+    <div class="collapse" id="collapseCalc">
+    <table>
+      <tr >  
+        <td title="DCF" (click)="navigate('dcf', 'portfolio', '/dcf/portfolio/')">
+          <div [ngClass]="{ 'selected-view': selectedView === 'dcf' && selectedViewLevel === 'portfolio'}" class="svg-container">
+            <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
+          </div>
+        </td>
+      </tr>
+  
+      <tr >
+        <td title="QC Capex"
+          (click)="navigate('qualicasa', 'portfolio', '/qualicasa/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' && selectedViewLevel === 'portfolio' }">
+            <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
+          </div>
+        </td>
+      </tr>
+  
+      <tr > 
+        <td title="Hedonic" (click)="navigate('hedonic', 'portfolio', '/hedonic/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' && selectedViewLevel === 'portfolio' }">
+            <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    </div>
+  
+    <p class="groupHeader groupToggle" ><a data-toggle="collapse" href="#collapseAnalysis" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
+    <hr class="seperator" />
+    <div class="collapse" id="collapseAnalysis">
+    <table>
+      <tr >
+        <td title="Cockpit" (click)="navigate('cockpit', 'portfolio', '/cockpit/portfolio/')">
+          <div class="svg-container">
+            <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
+            <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;Cockpit</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    </div>
+  
+    <p class="groupHeader groupToggle" ><a data-toggle="collapse" href="#collapseSettings" role="button" aria-expanded="false" aria-controls="collapseExample">Settings</a></p>
+    <hr class="seperator" />
+    <div class="collapse" id="collapseSettings">
+    <table>
+      <tr > 
+        <td title="Import Data"
+          (click)="navigate('importdata', 'portfolio', '/importdata/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'importdata' && selectedViewLevel === 'portfolio' }">
+           <i class="fa fa-upload iconSize23" aria-hidden="true"></i>
+            <span  >&nbsp;&nbsp;Import Data</span>
+          </div>
+        </td>
+      </tr>
+      <tr > 
+        <td title="Language" (click)="navigate('language', 'portfolio', '/language/portfolio/')">
+          <div class="svg-container svg-lang" [ngClass]="{ 'selected-view': selectedView === 'language' && selectedViewLevel === 'portfolio' }">
+            <span><i class="fa fa-language" aria-hidden="true"></i></span>
+            <span class="align-span" >&nbsp;&nbsp;Language</span>
+          </div>
+        </td>
+      </tr>
+  
+      <tr >
+        <td title="Duplicate property"
+          (click)="navigate('cloneproperty', 'portfolio', '/duplicateproperty/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'cloneproperty' && selectedViewLevel === 'portfolio' }">
+            <app-svg-icons [key]="clonePropertyKey" [height]="svgHeight" [fillColor]="svgFillColorArr[11]"> </app-svg-icons>
+            <span >&nbsp;&nbsp;Duplicate property</span>
+          </div>
+        </td>
+      </tr>
+  
+      <tr > 
+        <td title="Settings"
+          (click)="navigate('settings', 'portfolio', '/settings/portfolio/')">
+          <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'settings' }">
+            <i class="fa fa-cog iconSize23" aria-hidden="true"></i>
+            <span class="align-span" >&nbsp;&nbsp;Settings</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+    </div>
+  
+  </div><!--collapsePortfolio-->
+  
+  <div [ngClass]="{'d-block': view == 'property','d-none': view != 'property'}">
+    <p class="groupHeader groupToggle" id="property"><a data-toggle="collapse"  href="#collapseProperty" role="button" aria-expanded="false" aria-controls="collapseExample">Property</a><span  class="caret"></span></p>
+    <div  class="collapse" id="collapseProperty">
+      
+      <p class="groupHeader groupToggle"><a data-toggle="collapse" href="#collapseEditProp" role="button" aria-expanded="false" aria-controls="collapseExample">Edit</a></p>
+      <hr class="seperator"/>
+      <div class="collapse" id="collapseEditProp">
+      <table>
+        <tr>
+          <td title="Characteristics"
+            (click)="navigate('masterdata', 'property', '/characteristics/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'masterdata' && selectedViewLevel === 'property'}">
+              <app-svg-icons [key]="masterdataKey" [height]="svgHeight" [fillColor]="svgFillColorArr[3]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[3]}">&nbsp;&nbsp;Characteristics</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr >
+          <td title="Rent roll"
+            (click)="navigate('renter-mirror', 'property', '/rent/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'renter-mirror' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="rentermirrorKey" [height]="svgHeight" [fillColor]="svgFillColorArr[2]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[2]}">&nbsp;&nbsp;Rent roll</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <td title="Profit & loss"
+            (click)="navigate('profitandloss', 'property', '/profitAndLoss/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'profitandloss' && selectedViewLevel === 'property'}">
+              <app-svg-icons [key]="proftitnlossKey" [height]="svgHeight" [fillColor]="svgFillColorArr[5]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[5]}">&nbsp;&nbsp;Profit & loss</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <td title="Budget" (click)="navigate('budget', 'property', '/budget/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'budget' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="budgetKey" [height]="svgHeight" [fillColor]="svgFillColorArr[15]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[15]}">&nbsp;&nbsp;Budget</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      </div>
+  
+      <p class="groupHeader groupToggle"><a data-toggle="collapse" href="#collapseCalcProp" role="button" aria-expanded="false" aria-controls="collapseExample">Calculations</a></p>
+      <hr class="seperator"/>
+      <div class="collapse" id="collapseCalcProp">
+        <table>
+          <tr >
+          <td title="QC Capex" (click)="navigate('qualicasa', 'property', '/qualicasa/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'qualicasa' && selectedViewLevel === 'property'  }">
+              <app-svg-icons [key]="qccapexKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;QC Capex</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr >
+          <td title="DCF" (click)="navigate('dcf', 'property', '/dcf/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'dcf' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="dcfKey" [height]="svgHeight" [fillColor]="svgFillColorArr[1]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[1]}">&nbsp;&nbsp;DCF</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr >
+          <td title="Hedonic" (click)="navigate('hedonic', 'property', '/hedonic/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'hedonic' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="hedonicKey" [height]="svgHeight" [fillColor]="svgFillColorArr[6]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[6]}">&nbsp;&nbsp;Hedonic</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr >
+          <td title="Process stepper"
+            (click)="navigate('process-stepper', 'property', '/process/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'process-stepper' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="processstepperKey" [height]="svgHeight" [fillColor]="svgFillColorArr[10]">
+              </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[10]}">&nbsp;&nbsp;Process stepper</span>
+            </div>
+          </td>
+        </tr>
+      
+        <tr >
+          <td title="Rating" (click)="navigate('rating', 'property', '/rating/property/')">
+            <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' && selectedViewLevel === 'property' }">
+              <app-svg-icons [key]="ratingKey" [height]="svgHeight" [fillColor]="svgFillColorArr[18]"> </app-svg-icons>
+              <span  [ngStyle]="{'color': svgFillColorArr[18]}">&nbsp;&nbsp;Rating</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      </div>
+  
+      <p class="groupHeader groupToggle" ><a data-toggle="collapse" href="#collapseAnalysisProp" role="button" aria-expanded="false" aria-controls="collapseExample">Analysis</a></p>
+      <hr class="seperator"/>
+      <div class="collapse" id="collapseAnalysisProp">
+        <table>
+          <tr >
+            <td title="ImmoCockpit" (click)="navigate('immoCockpit', 'property', '/immocockpit/property/')">
+              <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' && selectedViewLevel === 'property' }">
+                <app-svg-icons [key]="dashboardKey" [height]="svgHeight" [fillColor]="svgFillColorArr[7]"> </app-svg-icons>
+                <span  [ngStyle]="{'color': svgFillColorArr[7]}">&nbsp;&nbsp;ImmoCockpit</span>
+              </div>
+            </td>
+          </tr>
+        
+          <tr >
+            <td title="IAZI MapsPro" (click)="navigate('mapsPro', 'property', '/mapspro/property/')">
+              <div class="svg-container" [ngClass]="{ 'selected-view': selectedView === 'rating' && selectedViewLevel === 'property' }">
+                <app-svg-icons [key]="mapKey" [height]="svgHeight" [fillColor]="svgFillColorArr[8]"></app-svg-icons>
+                <span  [ngStyle]="{'color': svgFillColorArr[8]}">&nbsp;&nbsp;IAZI MapsPro</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+  
+    </div> <!--collapseProperty-->
+  </div>
+</div><!--navigationBar-->
+  

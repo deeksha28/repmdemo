@@ -32,7 +32,10 @@ export class NavigationComponent implements OnInit {
   public portfolioId = 0;
   propertyId = 0;
   public svgHeight = 25;
-  selectedView;
+  public selectedView;
+  public selectedViewLevel;
+  public selectedPortfolioView;
+  public selectedPropertyView;
   view;
   viewPortfolio;
   public svgFillColorArr = [
@@ -58,17 +61,27 @@ export class NavigationComponent implements OnInit {
   ];
   
   constructor(private router: Router, private ds: DataService,private tabService: TabService) { 
-    this.selectedView = "overview"
+    //this.selectedPortfolioView = "overview"
     this.ds.view.subscribe((value) => {
       this.view = value
     })
-
     this.ds.portfolioToggle.subscribe((value) => {
       this.viewPortfolio = value
     })
   }
 
   ngOnInit(): void {
+    this.ds.selectedView.subscribe((value) => {
+      if(value){
+        this.selectedView = value.toLowerCase();
+        
+      }
+    })
+    this.ds.selectedViewLevel.subscribe((value) => {
+      if(value){
+        this.selectedViewLevel = value.toLowerCase();
+      }
+    })
   }
 
   public navigate(selectedView: string, level: string, path: string) {   
@@ -77,6 +90,7 @@ export class NavigationComponent implements OnInit {
       this.portfolioId = this.ds.getPortfolioId();
       this.tabService.addTab(path,this.portfolioId);
       path = path + this.portfolioId;
+      this.ds.viewSubject.next(level)
       this.ds.headerTypeSubject.next('portfolio')
       this.ds.viewSubject.next('portfolio')
       this.ds.headerSubject.next(this.ds.portfolios[this.ds.getPortfolioId()]);
@@ -94,7 +108,8 @@ export class NavigationComponent implements OnInit {
       if(property!=undefined) 
       this.ds.headerSubject.next(this.propertyId + property)
     }
-    this.selectedView = selectedView;
+    this.selectedView = selectedView;    
+    this.selectedViewLevel = level;
     this.router.navigate([path]);
   }
 

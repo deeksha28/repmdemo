@@ -11,6 +11,10 @@ export class DataService {
   header = this.headerSubject.asObservable();
   headerTypeSubject = new BehaviorSubject<string>(null);
   headerType = this.headerTypeSubject.asObservable();
+  selectedViewSubject = new BehaviorSubject<string>(null);
+  selectedView = this.selectedViewSubject.asObservable();
+  selectedViewLevelSubject = new BehaviorSubject<string>(null);
+  selectedViewLevel = this.selectedViewLevelSubject.asObservable();
   portfolioToggleSubject = new BehaviorSubject<boolean>(false);
   portfolioToggle = this.portfolioToggleSubject.asObservable();
   portalSubject = new BehaviorSubject<boolean>(true);
