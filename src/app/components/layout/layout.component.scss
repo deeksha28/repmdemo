@@ -39,8 +39,7 @@
 .flexItemNavigationContent {
   width: 100%;
   overflow: auto;
-  height: 890px;
-  min-height: 890px;
+  height: calc(100vh - 44px);
 }
 
 /* @media (max-width: 560px) {
