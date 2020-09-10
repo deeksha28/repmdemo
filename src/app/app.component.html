@@ -9,11 +9,11 @@
                 <a class="navbar-brand mr-1" id="LogoHome" href="{{redirectURL}}">
                     <img id="topbar-logo" src="./assets/img/IAZI-logo-Blue.svg">
                 </a>
-                <a class="navbar-brand mr-1 pointer" id="LogoHome" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
-                    <img class="p-2" id="topbar-logo" src="./assets/img/Overview.svg">
+                <a class="navbar-brand mr-1 pointer" id="overview" title="Overview" (click)="navigate('overview', '', '/overview')" *ngIf="!portal">
+                    <img class="p-2 topbar-menu" src="./assets/img/Overview.svg">
                 </a>
-                <a class="navbar-brand mr-1 pointer" id="LogoHome" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
-                    <img class="p-2" id="topbar-logo" src="./assets/img/task list_1.svg">
+                <a class="navbar-brand mr-1 pointer" id="tasks" title="Tasks" (click)="navigate('tasks', '', '/tasks')" *ngIf="!portal">
+                    <img class="p-2 topbar-menu" src="./assets/img/task list_1.svg">
                 </a>
                 <span class="portal-header" *ngIf="portal"> Portal </span>
             </div>
@@ -24,7 +24,7 @@
                     <li *ngIf="!portal">
                         <div class="main">
                             <div class="mb-0">
-                                <div class="nav navbar-nav topbar-label">
+                                <div class="nav navbar-nav topbar-label" style="padding-left: 11px;">
                                     <app-prev-next></app-prev-next>
                                 </div>
                               </div>

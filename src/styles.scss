@@ -251,6 +251,7 @@ margin-left:-12px!important;
         padding-right:9px;
     }
 }
+/*Tasks Style*/
 body .ui-widget
 {
   font-family: $font-family-standard !important;
@@ -264,6 +265,18 @@ body .ui-paginator{
 body .ui-table .ui-table-caption, body .ui-paginator{
     background-color: #fff!important;
     border: 1px solid #fff!important;
+}
+body .ui-paginator .ui-dropdown .ui-dropdown-label{
+    padding-bottom: 0px!important;
+}
+/*Tab style*/
+.flexItemContent .nav-link .tabName, .flexItemContent a.nav-link .closeTab {
+    color: #8f8e8e;
+    font-weight: normal;
+}
+.flexItemContent .nav-link.active .tabName, .flexItemContent .nav-link.active .closeTab {
+    color:#005684;
+    font-weight: 700;
 }
 
 body #propertyTree{

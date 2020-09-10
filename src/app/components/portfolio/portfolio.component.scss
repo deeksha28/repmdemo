@@ -58,11 +58,15 @@ table {
   margin-left: 5px;
   margin-right: 5px;
 }
+#propertyTree p{
+  padding-left: 2px;
+}
 
 select {
   width: 100%;
   border: none;
   box-shadow: none;
+  padding-top: 2px;
 }
 .flexItemNavigation {
   padding: 10px;
