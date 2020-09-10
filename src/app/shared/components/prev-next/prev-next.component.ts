@@ -18,12 +18,14 @@ export class PrevNextComponent implements OnInit {
 
   selectedView;
   constructor(private router: Router,private ds: DataService) {
-    this.ds.header.subscribe((value) => {
-      this.header = value
-    })
-        this.ds.headerType.subscribe((value) => {
-          this.headerType = value;
-        });
+    setTimeout(() => {
+      this.ds.header.subscribe((value) => {
+        this.header = value
+      })
+      this.ds.headerType.subscribe((value) => {
+        this.headerType = value;
+      });
+    }, 100)
   }
 
   ngOnInit(): void {
