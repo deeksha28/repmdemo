@@ -24,7 +24,14 @@ export class TabService {
     { name: 'hedonic', path: '/hedonic/property/' ,  tabId: '' ,url: ''},
     { name: 'tasks',   path: '/tasks' ,  tabId: '' ,url: ''},
     { name: 'DCF',   path: '/dcf/portfolio/',  tabId: '' ,url: ''},
-    { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '' }
+    { name: 'DCF',   path: '/dcf/property/',  tabId: '',url: '' },
+    { name: 'cockpit',   path: '/cockpit/portfolio',  tabId: '' ,url: ''},
+    { name: 'importData',   path: '/importdata/portfolio/',  tabId: '',url: '' },
+    { name: 'language',   path: '/language/portfolio/',  tabId: '',url: '' },
+    { name: 'duplicateProperty',   path: '/duplicateproperty/portfolio/',  tabId: '',url: '' },
+    { name: 'settings',   path: '/settings/portfolio/',  tabId: '',url: '' },
+    { name: 'immoCockpit',   path: '/immocockpit/property/',  tabId: '',url: '' },
+    { name: 'IAZIMapsPro',   path: '/mapspro/property/',  tabId: '',url: '' }
   ];
  
   constructor() { }
@@ -35,7 +42,12 @@ export class TabService {
       if (!this.tabs.includes(tab)) {
         tab.tabId = tab.path + id;
         tab.url = tab.tabId;
-        this.tabs.push(tab);
+        if(this.tabs.length == 6){
+          this.tabs.splice(0, 1);
+          this.tabs.push(tab);
+        }else{
+          this.tabs.push(tab);
+        }
         this.activeUrl = tab.path  + id
       }
       else if (this.tabs.includes(tab)){
@@ -43,7 +55,12 @@ export class TabService {
         var tabCopy = {...tab};
         tabCopy.tabId = tabCopy.path + id + '/' + (duplicateTabs.length + 1);
         tabCopy.url = tabCopy.path + id
-        this.tabs.push(tabCopy);
+        if(this.tabs.length == 6){
+          this.tabs.splice(0, 1);
+          this.tabs.push(tabCopy);
+        }else{
+          this.tabs.push(tabCopy);
+        }
         this.activeUrl = tabCopy.path  + id + '/' + (duplicateTabs.length + 1);
       }
     }
@@ -51,7 +68,12 @@ export class TabService {
       if (!this.tabs.includes(tab)) {
         tab.tabId = tab.path;
         tab.url = tab.tabId;
-        this.tabs.push(tab);
+        if(this.tabs.length == 6){
+          this.tabs.splice(0, 1);
+          this.tabs.push(tab);
+        }else{
+          this.tabs.push(tab);
+        }
         this.activeUrl = tab.url;
        // this.activeUrl = tab.url + '/' + id;
       }
